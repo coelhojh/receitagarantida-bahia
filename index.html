@@ -9,6 +9,20 @@
   gtag('js', new Date());
   gtag('config', 'AW-966185407');
 </script>
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-966185407/C_uoCJ-z_vABEL-j28wD',
+    'event_callback': callback
+  });
+  return false;
+}
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Receita Garantida Bahia – BV Garantia | Inadimplência Zero no seu Condomínio</title>
@@ -940,7 +954,7 @@ async function enviar(){
       mode:"no-cors"
     });
   }catch(e){console.log(e);}
-  gtag('event', 'conversion', {'send_to': 'AW-966185407/formulario_lead'});
+  gtag_report_conversion();
   btn.textContent="Quero minha simulação grátis →";btn.disabled=false;
   ["nome","condo","un","taxa","wa","email","cidade"].forEach(id=>document.getElementById(id).value="");
   document.getElementById("cargo").value="";document.getElementById("inadimplencia").value="";
