@@ -108,7 +108,7 @@ function gtag_report_conversion(url) {
       font-weight: 800;
       line-height: 1.2;
     }
-    .hero h1 .gold { color: var(--dourado); }
+    .hero h1 .gold { color: var(--dourado); white-space: nowrap; }
     .hero p {
       font-size: 1.07rem;
       opacity: .86;
@@ -135,7 +135,7 @@ function gtag_report_conversion(url) {
     .bwa:hover { background: var(--d2); }
 
     /* ── STATS ── */
-    .stats { background: #fff; box-shadow: 0 3px 18px rgba(0,0,0,.08); }
+    .stats { background: var(--verde); box-shadow: none; }
     .stats-inner {
       max-width: 1080px;
       margin: 0 auto;
@@ -147,26 +147,26 @@ function gtag_report_conversion(url) {
       min-width: 110px;
       text-align: center;
       padding: 22px 12px 20px;
-      border-right: 1px solid var(--cinza);
+      border-right: 1px solid rgba(255,255,255,.15);
     }
     .stat:last-child { border-right: none; }
     .stat-ico {
       margin: 0 auto 7px;
-      color: var(--verde);
+      color: rgba(255,255,255,.7);
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .stat-ico svg { width: 26px; height: 26px; stroke: var(--verde); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .stat-ico svg { width: 26px; height: 26px; stroke: rgba(255,255,255,.7); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .stat-n {
       font-family: "Montserrat", sans-serif;
       font-weight: 900;
       font-size: 1.65rem;
-      color: var(--verde);
+      color: #fff;
       line-height: 1;
       white-space: nowrap;
     }
-    .stat-l { font-size: .69rem; color: #888; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; }
+    .stat-l { font-size: .69rem; color: rgba(255,255,255,.6); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; }
 
     /* ── SECTION BASE ── */
     .sec { padding: 76px 44px; }
