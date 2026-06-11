@@ -14,10 +14,12 @@ function gtag_report_conversion(url) {
   var callback = function () {
     if (typeof(url) != 'undefined') { window.location = url; }
   };
-  gtag('event', 'conversion', {
-    'send_to': 'AW-966185407/C_uoCJ-z_vABEL-j28wD',
-    'event_callback': callback
-  });
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-966185407/C_uoCJ-z_vABEL-j28wD',
+      'event_callback': callback
+    });
+  }
   return false;
 }
 </script>
@@ -960,7 +962,14 @@ async function enviar(){
       body: JSON.stringify(payload), mode:"no-cors"
     });
   } catch(e){ console.log(e); }
+  // Disparo duplo: gtag direto + dataLayer para GTM
   gtag_report_conversion();
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      'event': 'form_submission',
+      'send_to': 'AW-966185407/C_uoCJ-z_vABEL-j28wD'
+    });
+  }
   btn.textContent = "✓ Enviado!";
   btn.disabled = false;
   ["nome","condo","un","taxa","wa","email","cidade"].forEach(id => document.getElementById(id).value = "");
